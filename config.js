@@ -4,7 +4,7 @@ const opacityValue = document.getElementById('opacity-value');
 const configs = document.getElementsByClassName('config-item');
 const inputs = document.getElementsByTagName('input');
 
-document.body.onload = document.body.classList.remove('preload');
+window.addEventListener("load", () => document.body.classList.remove("preload"));
 
 chrome.storage.local.get(['power', 'opacity'], async (result) => {
     power.checked = result.power;
