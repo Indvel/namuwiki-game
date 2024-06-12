@@ -1,0 +1,64 @@
+.nw-game-container {
+    width: fit-content;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.45);
+    position: fixed;
+    left: 0;
+    top: 5%;
+    text-align: center;
+    display: block;
+    padding: 8px;
+}
+
+.nw-game-text {
+    color: gold;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px black;
+    text-align: left;
+}
+
+.nw-game-status {
+    color: lime;
+    font-size: 18px;
+    text-shadow: 0px 0px 5px black;
+}
+
+.nw-game-count {
+    color: aquamarine;
+    font-size: 18px;
+    text-shadow: 0px 0px 5px black;
+}
+
+.nw-game-time {
+    font-size: 22px;
+    color: cyan;
+    text-shadow: 0px 0px 5px black;
+}
+
+.nw-div-btnContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#nw-button {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid whitesmoke;
+    background: gray;
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+}
+
+#nw-button:hover {
+    background: whitesmoke;
+    color: black;
+}
+
+#nw-div-btn2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

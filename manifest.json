@@ -1,0 +1,20 @@
+{
+  "name": "NAMUWIKI Game",
+  "version": "1.0.0",
+  "description": "이스타 TV의 콘텐츠 중 하나인 나무위키 게임입니다.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://namu.wiki/*"],
+      "css": ["overlay.css"],
+      "js": ["third-party/jquery-3.6.3-min.js", "contentscript.js"]
+    }
+  ],
+  "permissions": ["storage", "webNavigation"]
+}
