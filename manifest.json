@@ -13,8 +13,14 @@
     {
       "matches": ["https://namu.wiki/*"],
       "css": ["overlay.css"],
-      "js": ["third-party/jquery-3.6.3-min.js", "contentscript.js"]
+      "js": ["contentscript.js"]
     }
   ],
-  "permissions": ["storage", "webNavigation"]
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://namu.wiki/*"
+  ]
 }

@@ -3,15 +3,163 @@
     <head>
         <title>나무위키 게임</title>
         <meta charset="UTF-8">
+        <script type="module" src="./config.js"></script>
     </head>
     <style>
+        .preload * {
+            transition: none !important;
+        }
         body {
-            width: 200px;
-            height: 200px;
+            min-width: 200px;
+            margin: 0;
+            font-size: 14px;
+            --webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #app {
+            height: 150px;
+            overflow-y: auto;
+        }
+
+        #app::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #app::-webkit-scrollbar-thumb {
+            background-color: #999;
+            border-radius: 10px;
+        }
+        
+        footer {
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            text-align: left;
+            padding: 5px 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        footer p {
+            margin: 0 5px 5px;
+            color: #6c757d;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .config-power {
+            position: sticky;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+            background-color: #f8f9fa;
+        }
+
+        .config-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        [role="switch"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 40px;
+            height: 20px;
+            background-color: #e9ecef;
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s
+        }
+
+        [role="switch"]::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 2px;
+            transform: translateY(-50%);
+            transition: left 0.3s;
+        }
+
+        [role="switch"]:checked {
+            background-color: #007bff;
+        }
+
+        [role="switch"]:checked::before {
+            left: calc(100% - 18px);
+        }
+
+        [role="switch"]:focus {
+            outline: none;
+        }
+
+        [role="switch"]:focus-visible {
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        }
+
+        [role="switch"]:disabled {
+            cursor: not-allowed;
+            background-color: #e9ecef;
+        }
+
+        #opacity-value {
+            width: 30px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 40%;
+            height: 10px;
+            margin-left: 15px;
+            background-color: #e9ecef;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="range"]:disabled {
+            cursor: not-allowed;
+            background-color: #e9ecef;
         }
     </style>
-    <body>
-        <h3>나무위키 게임 ⓒ Indvel</h3>
-        <p>축구 전문 채널 <a href="https://www.youtube.com/@leestartv" target="_blank">이스타TV</a>에서의 콘텐츠 중 하나인 '나무위키 게임'을 확장프로그램으로 구현한 것입니다.</p>
+    <body class="preload">
+        <div class="config-power">
+            <label for="power">전원</label>
+            <input type="checkbox" role="switch" id="power" checked>
+        </div>
+        <div id="app">
+            <div class="config-item">
+                <label for="opacity">투명도</label>
+                <input type="range" id="opacity" min="0" max="100" value="100"> <span id="opacity-value">100</span>
+            </div>
+        </div>
+        <footer>
+            <p style="font-size: 0.9em;">ⓒ Indvel</p>
+            <p style="font-size: 0.8em;">축구 전문 채널 <a href="https://www.youtube.com/@leestartv" target="_blank">이스타TV</a>의 콘텐츠 중 하나인 '나무위키 게임'을 확장프로그램으로 구현한 것입니다.</p>
+        </footer>
     </body>
 </html>
