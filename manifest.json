@@ -16,5 +16,11 @@
       "js": ["third-party/jquery-3.6.3-min.js", "contentscript.js"]
     }
   ],
-  "permissions": ["storage", "webNavigation"]
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://namu.wiki/*"
+  ]
 }
